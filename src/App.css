@@ -1001,6 +1001,9 @@ nav .hamburger {
   .jobs .container {
     min-width: 100%;
   }
+  .jobs{
+    margin: 50px auto;
+  }
 }
 
 @media (max-width: 1060px) {
@@ -1013,6 +1016,7 @@ nav .hamburger {
   .jobs .container .banner .card {
     width: 100%;
   }
+  
 }
 
 
@@ -1285,6 +1289,12 @@ nav .hamburger {
   .my_applications .container {
     min-width: 100%;
   }
+  .my_applications{
+    margin: 50px auto;
+  }
+  .my_applications h3{
+    font-size: 25px;
+  }
 }
 
 @media (max-width: 1150px) {
@@ -1493,6 +1503,11 @@ nav .hamburger {
   .myJobs .container {
     min-width: 100%;
   }
+  .myJobs{
+    margin: 50px auto;
+    
+  }
+  
 }
 @media (max-width: 830px) {
   .myJobs .container .banner .card {
@@ -1614,6 +1629,9 @@ nav .hamburger {
   }
   .job_post .container form .salary_wrapper select {
     width: 100%;
+  }
+  .job_post {
+    margin: 50px auto;
   }
 }
 
