@@ -35,7 +35,7 @@ const Application = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:8000/api/v1/application/applicationPost",
+        "https://jobseekerapi.vercel.app/api/v1/application/applicationPost",
         formData,
         {
           withCredentials: true,

@@ -18,7 +18,7 @@ const MyApplications = () => {
     try {
       if (user && user.role === "Employer") {
         axios
-          .get("http://localhost:8000/api/v1/application/employeraplication", {
+          .get("https://jobseekerapi.vercel.app/api/v1/application/employeraplication", {
             withCredentials: true,
           })
           .then((res) => {
@@ -26,7 +26,7 @@ const MyApplications = () => {
           });
       } else {
         axios
-          .get("http://localhost:8000/api/v1/application/jobseekerapplications", {
+          .get("https://jobseekerapi.vercel.app/api/v1/application/jobseekerapplications", {
             withCredentials: true,
           })
           .then((res) => {
@@ -45,7 +45,7 @@ const MyApplications = () => {
   const deleteApplication = (id) => {
     try {
       axios
-        .delete(`http://localhost:8000/api/v1/application/deleteaplication/${id}`, {
+        .delete(`https://jobseekerapi.vercel.app/api/v1/application/deleteaplication/${id}`, {
           withCredentials: true,
         })
         .then((res) => {
