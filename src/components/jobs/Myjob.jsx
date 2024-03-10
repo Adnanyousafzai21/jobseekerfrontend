@@ -9,7 +9,7 @@
 //   },[])
 //   const myjob= async ()=>{
 //  try{
-//   const response = axios.get("http://localhost:8000/api/v1/job/myjob",{withCredentials:true})
+//   const response = axios.get("https://jobseekerapi.vercel.app/api/v1/job/myjob",{withCredentials:true})
 //   console.log( "my  jobs is here",response)
 // }catch(error){
 //   toast.error(error.response.data.message)
@@ -43,7 +43,7 @@ const MyJobs = () => {
     const fetchJobs = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:8000/api/v1/job/myjob",
+          "https://jobseekerapi.vercel.app/api/v1/job/myjob",
           { withCredentials: true }
         );
         setMyJobs(data.myjob);
@@ -74,7 +74,7 @@ const MyJobs = () => {
   const handleUpdateJob = async (jobId) => {
     const updatedJob = myJobs.find((job) => job._id === jobId);
     await axios
-      .put(`http://localhost:8000/api/v1/job/update/${jobId}`, updatedJob, {
+      .put(`https://jobseekerapi.vercel.app/api/v1/job/update/${jobId}`, updatedJob, {
         withCredentials: true,
       })
       .then((res) => {
@@ -89,7 +89,7 @@ const MyJobs = () => {
   //Function For Deleting Job
   const handleDeleteJob = async (jobId) => {
     await axios
-      .delete(`http://localhost:8000/api/v1/job/deletejob/${jobId}`, {
+      .delete(`https://jobseekerapi.vercel.app/api/v1/job/deletejob/${jobId}`, {
         withCredentials: true,
       })
       .then((res) => {

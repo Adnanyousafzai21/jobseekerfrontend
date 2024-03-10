@@ -11,7 +11,7 @@ const Jobs = () => {
 
   const getJob = async () => {
     try {
-      const { data } = await axios.get("http://localhost:8000/api/v1/job/getJob", {
+      const { data } = await axios.get("https://jobseekerapi.vercel.app/api/v1/job/getJob", {
         withCredentials: true,
       })
       console.log(data.allJobs)
