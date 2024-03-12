@@ -25,11 +25,11 @@ const {isAuthorized, setIsAuthorized}= useContext(context)
     e.preventDefault()
 
     try {
-      const response = await axios.post("https://jobseekerapi.vercel.app/api/v1/user/Register",
+      const response = await axios.post("https://dark-pink-cougar-tux.cyclic.app/api/v1/user/Register",
         { role: data.role, name: data.name, email: data.email, phone: data.phone , password:data.password},
         {
           header: { "Content_Type": "application/json" },
-          // withCridentials: true,
+      
           withCredentials: true
         })
         toast.success(response.data.message)
