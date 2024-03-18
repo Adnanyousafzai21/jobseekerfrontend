@@ -10,7 +10,7 @@ const [show , setShow]= useState(false)
 
     const handleLogOut= async()=>{
     try {
-        const response = await axios.get("http://localhost:8000/api/v1/user/logedout",{withCredentials: true})
+        const response = await axios.get("https://jobseekerapi.vercel.app/api/v1/user/logedout",{withCredentials: true})
 
         toast(response.data.message)
         setIsAuthorized(false)

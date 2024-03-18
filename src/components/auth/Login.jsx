@@ -24,7 +24,7 @@ const {isAuthorized, setIsAuthorized} =useContext(context)
         e.preventDefault()
 
         try {
-            const postlogin = await axios.post("http://localhost:8000/api/v1/user/login", { role: data.role, email: data.email, password: data.password }, {
+            const postlogin = await axios.post("https://jobseekerapi.vercel.app/api/v1/user/login", { role: data.role, email: data.email, password: data.password }, {
                 header: { "Content-Type": "application/json" },
                 withCredentials: true
             })

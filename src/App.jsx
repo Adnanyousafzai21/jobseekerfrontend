@@ -25,7 +25,7 @@ const App = () => {
   }, [isAuthorized])
   const fetchUser = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/api/v1/user/getuser", {
+      const response = await axios.get("https://jobseekerapi.vercel.app/api/v1/user/getuser", {
         withCredentials: true,
       })
       setUser(response.data.user)
