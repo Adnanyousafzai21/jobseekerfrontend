@@ -9,7 +9,7 @@ const HowItWorks = () => {
 
   const {user , setIsAuthorized}= useContext(context)
 
-const role = user.user
+const role = user.user && user.user
 
   return (
     <>

@@ -25,7 +25,7 @@ const App = () => {
   }, [isAuthorized])
   const fetchUser = async () => {
     try {
-      const response = await axios.get("https://dark-pink-cougar-tux.cyclic.app/api/v1/user/getuser", {
+      const response = await axios.get("http://localhost:8000/api/v1/user/getuser", {
         withCredentials: true,
       })
       setUser(response.data.user)
@@ -35,10 +35,11 @@ const App = () => {
     }
   }
     return (
-      <div>
+      <div >
 
         <Router>
           <Navbar/>
+          <div className='mainscreen'>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
@@ -51,6 +52,7 @@ const App = () => {
             <Route path="/myapplication" element={<MyApplications />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          </div>
           <Footer/>
         </Router>
         <Toaster/>
