@@ -20,11 +20,12 @@ const {isAuthorized, setIsAuthorized} =useContext(context)
             [name]: value
         }))
     }
+    const baseapi= import.meta.env.VITE_APP_BASE_URL
     const handleLogin = async (e) => {
         e.preventDefault()
 
         try {
-            const postlogin = await axios.post("https://jobseekerapi.vercel.app/api/v1/user/login", { role: data.role, email: data.email, password: data.password }, {
+            const postlogin = await axios.post(`${import.meta.env.VITE_APP_BASE_URL}/api/v1/user/login`, { role: data.role, email: data.email, password: data.password }, {
                 header: { "Content-Type": "application/json" },
                 withCredentials: true
             })

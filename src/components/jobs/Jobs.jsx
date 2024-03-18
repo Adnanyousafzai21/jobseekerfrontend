@@ -11,7 +11,7 @@ const Jobs = () => {
 
   const getJob = async () => {
     try {
-      const { data } = await axios.get("https://jobseekerapi.vercel.app/api/v1/job/getJob", {
+      const { data } = await axios.get(`${import.meta.env.VITE_APP_BASE_URL}/api/v1/job/getJob`, {
         withCredentials: true,
       })
       console.log(data.allJobs)

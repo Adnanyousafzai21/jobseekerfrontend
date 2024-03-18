@@ -9,7 +9,7 @@
 //   },[])
 //   const myjob= async ()=>{
 //  try{
-//   const response = axios.get("https://jobseekerapi.vercel.app/api/v1/job/myjob",{withCredentials:true})
+//   const response = axios.get("${import.meta.env.VITE_APP_BASE_URL}/api/v1/job/myjob",{withCredentials:true})
 //   console.log( "my  jobs is here",response)
 // }catch(error){
 //   toast.error(error.response.data.message)
@@ -42,8 +42,7 @@ const MyJobs = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const { data } = await axios.get(
-          "https://jobseekerapi.vercel.app/api/v1/job/myjob",
+        const { data } = await axios.get(`${import.meta.env.VITE_APP_BASE_URL}/api/v1/job/myjob`,
           { withCredentials: true }
         );
         setMyJobs(data.myjob);
@@ -74,7 +73,7 @@ const MyJobs = () => {
   const handleUpdateJob = async (jobId) => {
     const updatedJob = myJobs.find((job) => job._id === jobId);
     await axios
-      .put(`https://jobseekerapi.vercel.app/api/v1/job/update/${jobId}`, updatedJob, {
+      .put(`${import.meta.env.VITE_APP_BASE_URL}/api/v1/job/update/${jobId}`, updatedJob, {
         withCredentials: true,
       })
       .then((res) => {
@@ -89,7 +88,7 @@ const MyJobs = () => {
   //Function For Deleting Job
   const handleDeleteJob = async (jobId) => {
     await axios
-      .delete(`https://jobseekerapi.vercel.app/api/v1/job/deletejob/${jobId}`, {
+      .delete(`${import.meta.env.VITE_APP_BASE_URL}/api/v1/job/deletejob/${jobId}`, {
         withCredentials: true,
       })
       .then((res) => {

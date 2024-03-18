@@ -16,16 +16,20 @@ import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import MyApplications from './components/applications/MyApplication'
 import PostJob from './components/jobs/PostJob'
-const App = () => {
-  const { user, isAuthorized, setIsAuthorized, setUser } = useContext(context)
 
+
+const App = () => {
+
+  const apiUrl = import.meta.env.VITE_APP_BASE_URL
+  console.log("api url ",apiUrl)
+  const { user, isAuthorized, setIsAuthorized, setUser } = useContext(context)
 
   useEffect(() => {
     fetchUser()
   }, [isAuthorized])
   const fetchUser = async () => {
     try {
-      const response = await axios.get("https://jobseekerapi.vercel.app/api/v1/user/getuser", {
+      const response = await axios.get(`${import.meta.env.VITE_APP_BASE_URL}/api/v1/user/getuser`, {
         withCredentials: true,
       })
       setUser(response.data.user)
