@@ -21,9 +21,7 @@ const [show , setShow]= useState(false)
 }
 return (
     <div>
-        <nav className={isAuthorized ? "navbarShow" : "avbarShow"
-        // "navbarHide"
-        }>
+        <nav className={isAuthorized ? "navbarShow" :  "navbarHide" }>
             <div className='container'>
                 <div className="logo">
           <h4>Job Sekeer</h4>

@@ -8,10 +8,10 @@ import PopularCompanies from './PopulerCompanies'
 
 const Home = () => {
 
-  // const { isAuthorized } = useContext(context)
-  // if (!isAuthorized) {
-  //   return <Navigate to="/login" />
-  // }
+  const { isAuthorized } = useContext(context)
+  if (!isAuthorized) {
+    return <Navigate to="/login" />
+  }
 
 
   return (
