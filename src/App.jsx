@@ -32,8 +32,11 @@ const App = () => {
       const response = await axios.get(`${import.meta.env.VITE_APP_BASE_URL}/api/v1/user/getuser`, {
         withCredentials: true,
       })
-      setUser(response.data.user)
+      if(response.ok){
+         setUser(response.data.user)
       setIsAuthorized(true)
+      }
+     
     } catch (error) {
       setIsAuthorized(false)
     }
